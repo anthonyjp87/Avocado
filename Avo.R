@@ -5,11 +5,6 @@ r <- data.table(foo)
 #Clear the empty shit: 
 r[,c('accountid','campaignid','bidderid','clientid','exchangeid','brandid','insertionorderid','inventoryid','tacticflightid','insertionorderflightid','currency','expansions','totalcost','advertiserrevenue','dealid'):=NULL]
 
-#Categorize Creative ID into Readable Segments: 
-cid2<-as.character(r$creativeid)
-cid <- replace(rup, rup==c('565d7d09507048f61cee0115', '565d7d0a507048f61cee0116'),c('a','b'))
-
-
 #Rename the items in this long stupid thing to easier names:
 unique_item<-unique(r$creativeid)
   for(i in 1:length(unique_item)){
